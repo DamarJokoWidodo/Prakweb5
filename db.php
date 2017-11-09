@@ -30,12 +30,16 @@ die("Database query failed.");
 </head>
 <body>
 
+<ul>
 <?php
-while($row = mysqli_fetch_row($row)){
-var_dump($row);
-echo "<hr />";
+while($subject = mysqli_fetch_assoc($result)){
+?>
+<li><?php echo $subject["menu_name"]; ?></li>
+<?php
 }
 ?>
+</ul>
+
 <?php
 mysqli_free_result($result);
 ?>
